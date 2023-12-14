@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  font-family: jost;
+}
 
 /* header */
 /* -------------------------------------------------------------------- */
@@ -25,6 +28,7 @@
   display: flex;
   flex-wrap: wrap;
   margin-top: 2rem;
+  /* width: 20%; */
 }
 .flex-header-item {
   margin-right: 0.5rem;
@@ -48,100 +52,107 @@
   width: 13rem;
 }
 
-/* Body */
-/* ------------------------------------------------------------------------ */
-#page-name {
-  background-color: #f3ead8;
-  height: 8rem;
-  position: relative;
-}
+/* hero section */
 
-#page-name h2 {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-}
-.container {
-  margin-top: 5rem;
-  margin-bottom: 10rem;
+.hero-section {
+  background-color: antiquewhite;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  height: 90vh;
+  justify-content: flex-end;
+  gap: 5rem;
 }
-.left-container {
+.description {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  transform: translateY(-10rem);
   width: 30%;
-  text-align: center;
-  border-right: 2px solid #ff2020;
+  margin-top: 7rem;
+  margin-left: 10rem;
+  flex: 1.5;
 }
-#PP-img {
-  width: 10rem;
-  height: 10rem;
-  border: 2px solid salmon;
-  border-radius: 50%;
-  margin: 1rem;
-  margin-top: 2rem;
+.description h2 {
+  font-size: 68px;
+  font-weight: 500;
+  line-height: 78px;
+  margin-bottom: 10px;
 }
-#usr-name {
-  margin: 2rem;
+.description p {
+  font-size: 20px;
+  line-height: 1.5;
 }
-.btn-logout {
-  background-color: #ff2020;
-  width: 10rem;
-  height: 3rem;
-  border: 1px solid white;
-  border-radius: 1rem;
-  font-size: large;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  margin-top: 3rem;
+.description a {
+  text-decoration: none;
   color: white;
-}
-
-.right-container {
-  width: 70%;
-  margin-bottom: 3rem;
-}
-#usr-info-title {
-  margin-left: 2rem;
-  margin-bottom: 2rem;
-}
-.info-content-div {
-  margin: 1rem auto;
-  border: 2px solid rgb(208, 211, 215);
-  box-shadow: 5px 10px 8px #888888;
-  border-radius: 1rem;
-  width: 80%;
-  padding: 1rem;
-  text-transform: capitalize;
-  background-color: rgb(255, 255, 255);
-}
-form {
-  position: relative;
-  height: 23rem;
-}
-#usr-info {
-  width: 100%;
-}
-#usr-info tr td {
-  padding: 1rem;
-  /* background-color: silver; */
-}
-#update-btn {
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: 0.5s;
+  padding: 17px 10px;
+  margin-top: 1rem;
+  text-align: center;
   width: 10rem;
-  height: 3rem;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  border: 2px solid white;
-  border-radius: 1rem;
-  background-color: white;
+  background-color: rgb(248, 133, 1);
 }
-.tdStyle {
-  font-size: larger;
-  font-weight: 700;
-  padding-left: 5%;
-  padding-top: 10%;
+.description a:hover {
+  border: 2px solid rgb(248, 133, 1);
+  background-color: transparent;
+  color: rgb(248, 133, 1);
 }
 
+.image-container {
+  flex: 2;
+  margin-top: 7rem;
+}
+.home-product-image {
+  width: 100%;
+  height: 90%;
+}
+.product-overview {
+  text-align: center;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
+.products-container {
+  margin-top: 2rem;
+  gap: 1rem;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15rem;
+}
+.icon-container {
+  display: flex;
+  justify-content: center;
+}
+.icon {
+  width: 25rem;
+  height: 25rem;
+}
+.price {
+  margin-top: 1rem;
+  margin-left: 4rem;
+  color: #666;
+}
+.shop {
+  margin-left: 10rem;
+  text-decoration: none;
+  text-decoration: none;
+  color: white;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: 0.5s;
+  padding: 10px 5px;
+  margin-top: 1rem;
+  text-align: center;
+  width: 10rem;
+  background-color: rgb(248, 133, 1);
+}
+.shop:hover {
+  border: 2px solid rgb(248, 133, 1);
+  background-color: transparent;
+  color: rgb(248, 133, 1);
+}
 /* Footer */
 /* ------------------------------------------------------------------------ */
 .footer-flex {
@@ -194,11 +205,4 @@ form {
   padding: 1rem;
   background-color: #ff2020;
   color: white;
-}
-
-.inputStyle {
-  padding: 15px;
-  border: 2px #ddd solid;
-  width: 80%;
-  border-radius: 5px;
 }
