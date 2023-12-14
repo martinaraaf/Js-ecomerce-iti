@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+
+    <!-- font icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <link rel="stylesheet" href="../Styles/Layout.css">
+    <!-- <link rel="import" href="Layout.html" id="myTemplate"> -->
+    <!-- <link rel="import" href="header.html" id="myHTemplate"> -->
+
+    <script src="external1.js" defer></script>
+    <!-- <script src="/Marwan/js.js" defer></script> -->
+    <!-- <script src="/JS Pages/header.js" defer></script> -->
+    <!-- <script src="/JS Pages/layout.js" defer></script> -->
+    <style>
+        #page-name{
+            background-color: #F3EAD8;
+            height: 8rem;
+            position: relative;
+        }
+        #page-name h1{
+            position: absolute;
+            top: 40%;
+            left: 48%;
+        }
+
+        .div-body{
+            height: 100vh;
+        }
+        .body-section{
+            width: 70rem;
+            height: fit-content;
+            background-color: antiquewhite;
+            margin: 10rem auto;
+
+        }
+        .container{
+            display: flex;
+            justify-content: space-evenly;
+            padding: 10vh;
+        }
+        #img-choice1{
+            height: 20rem;
+        }
+        .left-container span h1{
+            line-height:3;
+        }
+        /* #choice1{
+            display: none;
+        } */
+
+        #choice2{
+            display: none;
+        }
+        table{
+            width: 100%;
+            /* background-color: blueviolet; */
+        }
+        /* tr{
+            background-color: black;
+        } */
+        th{
+            text-align: left;
+            line-height: 1.5;
+            /* background-color: aliceblue; */
+        }
+        th:nth-child(1) {
+                width: 50%;
+        }
+        td{
+            line-height: 4;
+            border-bottom: 1px solid gray;
+
+        }
+        td:nth-child(1) {
+                width: 50%;
+        }
+        .plus-minus{
+            width: 1.5rem;
+            margin-left: .5rem;
+        }
+        .div-total{
+            position: relative;
+            /* background-color: aqua; */
+            height: 2rem;
+            padding-top: 2rem;
+            padding-bottom: 3rem;
+        }
+        .sub-total{
+            position: absolute;
+            right: 15rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-bar-flex">
+            <div class="flex-header-div">
+                <img id="header-logo" src="/assets/images/logo.png" alt="">
+            </div>
+            <div class="flex-header-div">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Electronics</a></li>
+                    <li><a href="#">Home Needs</a></li>
+                </ul>
+            </div>
+            <div class="flex-header-div flex-div-container">
+                <div class="flex-header-item"><span class="material-symbols-outlined"><a href="#">person</a></span></div>
+                <div class="flex-header-item"><span class="material-symbols-outlined"><a href="#">shopping_cart</a></span></div>
+                <div class="flex-header-item">
+                    <input type="text" name="" id="" placeholder="&#128269;">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="page-name"><h1>Cart</h1></div>
+
+    <div class="div-body">
+        <div class="body-section" id="choice1">
+            <div class="container">
+                <div class="left-container">
+                    <span><h1>Your Cart is Empty</h1></span>
+                    <span><h2>Please add some items to the cart or just go to Login Page</h2></span>
+                </div>
+                <div class="right-container">
+                    <img src="../assets/images/cart2.png"  id="img-choice1" alt="">
+                </div>
+            </div>
+        </div>
+
+        <!-- <button value="+" id="btn">+++</button> btn.value , eval -->
+        <div class="body-section" id="choice2">
+            <div class="container">
+                <table id="table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    
+                </table>
+            </div>
+            <div class="div-total">
+                <span class="sub-total">SubTotal :    <span id="sub-total"></span></span>
+            </div>
+        </div>
+    </div>
+
+   
+    <footer class="footer">
+        <div class="footer-flex">
+            <div class="flex-footer-div underlined-div">
+                <div class="flex-footer-item">
+                    <h2>Subscribe Newsletter</h2>
+                    <span>Subscribe newsletter to get 5% on all products.</span>
+                </div>
+                <div class="flex-footer-item">
+                    <input type="text" name="" id="" placeholder="Enter your email">
+                    <input type="button" value="subscribe">
+                </div>
+                <div class="flex-footer-item">
+                    <span class="material-symbols-outlined" >search</span>
+                    <span class="material-symbols-outlined">person</span>
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                </div>
+            </div>
+            <div class="flex-footer-div underlined-div">
+                <div class="flex-footer-item">
+                    <img src="/assets/images/white_logo_footer.png" alt="">
+                </div>
+                <div class="flex-footer-item">
+                    <h3>Shop Women</h3>
+                    <ul>
+                        <li><a href="#">Womens' dresses</a></li>
+                        <li><a href="#">Womens' shoes</a></li>
+                        <li><a href="#">Womens' watches</a></li>
+                        <li><a href="#">Womens' jewellery</a></li>
+                        <li><a href="#">Womens' bags</a></li>
+                        <li><a href="#">Tops</a></li>
+                    </ul>
+                </div>
+                <div class="flex-footer-item">
+                    <h3>Shop Men</h3>
+                    <ul>
+                        <li><a href="#">Mens' shirts</a></li>
+                        <li><a href="#">Mens' shoes</a></li>
+                        <li><a href="#">Mens' watches</a></li>
+                        <li><a href="#">Sunglasses</a></li>
+                        <!-- <li><a href="#">Casual</a></li> -->
+                    </ul>
+                </div>
+                <div class="flex-footer-item">
+                    <h3>Electronics</h3>
+                    <ul>
+                        <li><a href="#">Smart phones</a></li>
+                        <li><a href="#">Laptops</a></li>
+                        <li><a href="#">Automotive</a></li>
+                        <li><a href="#">Motorcycle</a></li>
+                        <li><a href="#">Lighting</a></li>
+                    </ul>
+                </div>
+                <div class="flex-footer-item">
+                    <h3>Home Needs</h3>
+                    <ul>
+                        <li><a href="#">Home decoration</a></li>
+                        <li><a href="#">Furniture</a></li>
+                        <li><a href="#">Groceries</a></li>
+                        <li><a href="#">Fragrances</a></li>
+                        <li><a href="#">Skin Care</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex-footer-div">
+                <div class="flex-footer-item">
+                    <span>Copyright &copy;2023 All rights reserved | This template is made with &hearts; by Colorlib, and we -ITI students- are just coping the UI </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // console.log(document.getElementById('table'))
+    </script>
+</body>
+</html>

@@ -1,3 +1,5 @@
+localStorage.setItem("loggedIn", 0);
+
 const form = document.getElementById("form");
 var data = "";
 if (form) {
@@ -24,7 +26,7 @@ if (form) {
     }else{
       document.getElementById("span").style.display="block"
     }
-  
+    localStorage.AddMeToCart = -1;
   });
 }
  var span=document.getElementById("span")
@@ -46,11 +48,12 @@ if(pass){document.getElementById("password").addEventListener("input",()=>{
 var logoutt=document.getElementById("logout")
 function logout(info) {
   localStorage.removeItem("dataa");
-
-  location.reload();
+  localStorage.AddMeToCart = 0;
+  // location.reload();
 }
 if(logoutt){
   document.getElementById("logout").addEventListener("click", () => {
+    window.open("../login/index.html");
     logout(data);
   })
 }

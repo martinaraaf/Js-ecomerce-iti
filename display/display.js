@@ -19,6 +19,8 @@ async function displayUserProfile(id) {
         element4.src = user.image;
         element5.innerHTML = user.birthDate;
         element6.innerHTML = user.gender;
+
+        localStorage.loggedIn = id;
       } catch (error) {
         console.error(error);
       }

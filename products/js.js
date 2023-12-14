@@ -30,15 +30,22 @@ function getfromapi(mydata) {
     let addtocart = document.createElement("button");
     addtocart.className = "addtocart";
     addtocart.innerHTML = "Add To Cart";
-    // addtocart.addEventListener("mouseover", function () {
-    //   this.style.backgroundColor = "#FF2020";
-    //   this.style.cursor = "pointer";
-    //   this.style.color = "white";
-    // });
-    // addtocart.addEventListener("mouseout", function () {
-    //   this.style.backgroundColor = "buttonface";
-    //   this.style.color = "black";
-    // });
+    // hager
+    tempLocal = [];
+    addtocart.addEventListener("click", function() {
+      // if the user not signed in, go to login page
+      // else if cart is empty, so switch to choice2 card and add the element in local storag with quantity and price in object format or array to pull them together and add row
+      if(JSON.parse(localStorage.loggedIn)){
+        tempLocal.push(myproducts[i].id);
+        localStorage.setItem("AddMeToCart", tempLocal);
+      }else{
+        // go to login page
+        window.open("../login/index.html");
+      }
+      // else if the element already add, so increase in quantity not in rows
+      // else cart not empty and first time for this element so add a row with quantity 1
+
+    });
     subsection.addEventListener("click", function () {
       localStorage.setItem("myproduct", myproducts[i].id);
       window.open("products-details (1).html");
