@@ -1,3 +1,4 @@
+// tempLocal = [];
 let limit = 30;
 let skip = 0;
 function fetchdata() {
@@ -31,20 +32,20 @@ function getfromapi(mydata) {
     addtocart.className = "addtocart";
     addtocart.innerHTML = "Add To Cart";
     // hager
-    tempLocal = [];
     addtocart.addEventListener("click", function() {
-      // if the user not signed in, go to login page
-      // else if cart is empty, so switch to choice2 card and add the element in local storag with quantity and price in object format or array to pull them together and add row
+      // console.log(localStorage.AddMeToCart)
+      // console.log(JSON.parse(localStorage.AddMeToCart))
       if(JSON.parse(localStorage.loggedIn)){
-        tempLocal.push(myproducts[i].id);
-        localStorage.setItem("AddMeToCart", tempLocal);
+        if(JSON.parse(localStorage.AddMeToCart) === -1){
+          localStorage.setItem("AddMeToCart",  myproducts[i].id);
+        }else{
+          localStorage.AddMeToCart += myproducts[i].id;
+        }
       }else{
         // go to login page
         window.open("../login/index.html");
       }
-      // else if the element already add, so increase in quantity not in rows
-      // else cart not empty and first time for this element so add a row with quantity 1
-
+      
     });
     subsection.addEventListener("click", function () {
       localStorage.setItem("myproduct", myproducts[i].id);

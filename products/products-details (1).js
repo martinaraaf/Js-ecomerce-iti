@@ -27,4 +27,19 @@ fetch(`https://dummyjson.com/products/${test}`)
         image.src = this.src;
       });
     });
+
+    let btn = document.getElementById("add-btn");
+    btn.addEventListener('click', function() {
+      if(JSON.parse(localStorage.loggedIn)){
+        if(JSON.parse(localStorage.AddMeToCart) === -1){
+          localStorage.setItem("AddMeToCart",  product.id);
+        }else{
+          localStorage.AddMeToCart += product.id;
+        }
+      }else{
+        // go to login page
+        window.open("../login/index.html");
+      }
+    });
+
   });
