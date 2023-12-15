@@ -33,8 +33,6 @@ function getfromapi(mydata) {
     addtocart.innerHTML = "Add To Cart";
     // hager
     addtocart.addEventListener("click", function() {
-      // console.log(localStorage.AddMeToCart)
-      // console.log(JSON.parse(localStorage.AddMeToCart))
       if(JSON.parse(localStorage.loggedIn)){
         if(JSON.parse(localStorage.AddMeToCart) === -1){
           localStorage.setItem("AddMeToCart",  myproducts[i].id);

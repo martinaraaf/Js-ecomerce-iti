@@ -49,6 +49,7 @@ var logoutt=document.getElementById("logout")
 function logout(info) {
   localStorage.removeItem("dataa");
   localStorage.AddMeToCart = 0;
+  localStorage.onCart = 0;
   localStorage.myproduct = 0;
   // location.reload();
 }

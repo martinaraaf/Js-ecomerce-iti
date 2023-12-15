@@ -1,3 +1,5 @@
+// localStorage.setItem("onCart", 0);
+
 fetch('https://dummyjson.com/products')
 .then( (res) => {
     let myData = res.json();
@@ -104,19 +106,40 @@ function addToCart(myData){
         }
         let subTotal = document.getElementById('sub-total');
         subTotal.innerHTML = receipt;
+
+        localStorage.onCart = JSON.parse(arr);
 }
 
 table.addEventListener('click', (e) => {
     let btn = document.getElementsByClassName('plus-minus');
     let q = e.target.parentElement.firstChild.innerText ;
     
-    if(e.target.value == btn[0].value && q!=10){
-        let quant = parseInt(e.target.parentElement.firstChild.innerText);
-        e.target.parentElement.firstChild.innerHTML = eval(quant + 1);
 
+    if(e.target.value == btn[0].value){
+        let quant = parseInt(e.target.parentElement.firstChild.innerText);
+        let lastq = e.target.parentElement.firstChild.innerHTML = eval(quant + 1);
+
+        let prod_name = e.target.parentElement.parentElement.children[0].innerText;
+        let brr = JSON.parse(localStorage.onCart);
+        
+        for(let i=0; i<brr.length; i++){
+            if(prod_name === brr[i].Title){
+                brr[i].quantity = lastq;
+                brr[i].total = brr[i].quantity * brr[i].price;
+                e.target.parentElement.parentElement.lastChild.innerHTML = brr[i].total;
+            }
+        }
+        
+        localStorage.setItem("onCart", JSON.stringify(brr));
+        
     }else if(e.target.value == btn[1].value && q!=0){
         let quant = parseInt(e.target.parentElement.firstChild.innerText);
-        e.target.parentElement.firstChild.innerHTML = eval(quant - 1);
+        let lastq = e.target.parentElement.firstChild.innerHTML = eval(quant - 1);
+
+        let price = parseInt(e.target.parentElement.parentElement.children[1].innerText)
+        e.target.parentElement.parentElement.lastChild.innerHTML = eval(price * lastq)
+
+        localStorage.setItem("onCart", JSON.stringify(brr));
     }
 })
     
