@@ -1,4 +1,6 @@
 localStorage.setItem("onCart", 0);
+var subTotal = document.getElementById("sub-total");
+let receipt = 0;
 
 fetch("https://dummyjson.com/products")
   .then((res) => {
@@ -100,11 +102,9 @@ function addToCart(myData) {
     table.appendChild(tr);
   }
 
-  let receipt = 0;
   for (let i = 0; i < arr.length; i++) {
     receipt += arr[i].total;
   }
-  let subTotal = document.getElementById("sub-total");
   subTotal.innerHTML = receipt;
 
   localStorage.setItem("onCart", JSON.stringify(arr));
@@ -120,18 +120,16 @@ table.addEventListener("click", (e) => {
 
     let prod_name = e.target.parentElement.parentElement.children[0].innerText;
     let brr = JSON.parse(localStorage.getItem("onCart"));
-    console.log(brr);
-
-    receipt = 0;
+    var z = 0;
     for (let i = 0; i < brr.length; i++) {
-      if (prod_name === brr[i].Title) {
+      if (prod_name == brr[i].Title) {
         brr[i].quantity = lastq;
         brr[i].total = brr[i].quantity * brr[i].price;
         e.target.parentElement.parentElement.lastChild.innerHTML = brr[i].total;
-        receipt += brr[i].total;
-        subTotal.innerHTML = receipt;
       }
+      z += brr[i].total;
     }
+    subTotal.innerHTML = z;
 
     localStorage.setItem("onCart", JSON.stringify(brr));
   } else if (e.target.value == btn[1].value && q != 0) {
@@ -144,6 +142,21 @@ table.addEventListener("click", (e) => {
     e.target.parentElement.parentElement.lastChild.innerHTML = eval(
       price * lastq
     );
+    let prod_name = e.target.parentElement.parentElement.children[0].innerText;
+
+    let brr = JSON.parse(localStorage.getItem("onCart"));
+    var z = 0;
+
+    for (let i = 0; i < brr.length; i++) {
+      if (prod_name == brr[i].Title) {
+        brr[i].quantity = lastq;
+        brr[i].total = brr[i].quantity * brr[i].price;
+        e.target.parentElement.parentElement.lastChild.innerHTML = brr[i].total;
+        var productPrice = brr[i].total;
+      }
+      z += brr[i].total;
+    }
+    subTotal.innerHTML = z - productPrice;
 
     localStorage.setItem("onCart", JSON.stringify(brr));
   }
