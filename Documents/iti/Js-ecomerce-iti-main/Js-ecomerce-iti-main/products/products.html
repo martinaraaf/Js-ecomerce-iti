@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Layout.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <title>products</title>
+    <script
+      src="https://kit.fontawesome.com/7e98b4f326.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        font-family: jost;
+      }
+      #sidenav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        background-color: #f3ead8;
+        width: 100%;
+        /* border-bottom-width: 1px;
+        border-top-width: 0px;
+        border-left-width: 0px;
+        border-right-width: 0px; */
+        font-size: 1.3rem;
+        text-align: center;
+        /* position: absolute; */
+        /* top: -100%; */
+        /* transform: translateY(-50%); */
+      }
+      .cat {
+        /* border-width: 3px;
+        border-bottom-width: 0px; */
+        padding: 10px 25px;
+        /* border-style: solid; */
+      }
+      .section {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        margin: 20px;
+      }
+      .allimages {
+        width: 20rem;
+        height: 20rem;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      #right {
+        left: 60%;
+      }
+      .title {
+        font-size: 2rem;
+        color: #ff2020;
+        margin: 1vw;
+      }
+      .category {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+      .price {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-left: 0;
+      }
+      #catalog {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        margin-left: 50px;
+        margin-right: 50px;
+      }
+      h1 {
+        font-size: 3rem;
+        text-align: center;
+      }
+      #select {
+        font-size: 1rem;
+        outline: none;
+        border: none;
+      }
+      #sections {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 2%;
+      }
+      button {
+        font-size: 1rem;
+        padding: 1vw 1.5vw;
+        border-radius: 0.5vw;
+        border-style: hidden;
+        margin: 1vw;
+      }
+      .search-container {
+        display: flex;
+        gap: 1rem;
+        position: relative;
+      }
+      .search {
+        flex: 1;
+        height: 50px;
+        margin-bottom: 20px;
+        border: 1px solid rgba(35, 47, 85, 0.15);
+        border-radius: 30px;
+        outline: none;
+        padding: 10px 20px;
+      }
+      .search-button {
+        width: 100px;
+        height: 50px;
+        background-color: rgb(179, 102, 102);
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      .fa-solid.fa-magnifying-glass.fa-xl {
+        position: absolute;
+        padding-top: 1.5rem;
+        right: 1rem;
+        cursor: pointer;
+      }
+      /* @media screen and (max-width: 800px) {
+        .allimages {
+          width: 25vw;
+          height: 25vh;
+        }
+      } */
+      #n-p {
+        text-align: center;
+      }
+      .n-p:hover,
+      .addtocart:hover {
+        transition: ease-in-out 0.3s;
+        background-color: #ff2020;
+
+        color: white;
+        cursor: pointer;
+      }
+      .cat:hover {
+        background-color: #ff2020;
+        color: white;
+        transition: ease-in-out 0.5s;
+        cursor: pointer;
+      }
+      .active {
+        background-color: #ff2020;
+        color: white;
+      }
+      @media screen and (max-width: 670px) {
+        #sections {
+          grid-template-columns: 1fr;
+        }
+        .allimages {
+          width: 80%;
+          height: 10rem;
+        }
+        .search {
+          width: 5px;
+          height: 10px;
+        }
+        .fa-solid.fa-magnifying-glass.fa-xl {
+          padding-top: 1rem;
+          right: 0.5rem;
+        }
+        .title,
+        .price,
+        .addtocart {
+          font-size: 1rem;
+        }
+      }
+      @media screen and (max-width: 450px) {
+        #sidenav {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="nav-bar-flex">
+        <div class="flex-header-div">
+          <img id="header-logo" src="images/logo.png" alt="" />
+        </div>
+        <div class="flex-header-div">
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="../login/index.html">Log in</a></li>
+          </ul>
+        </div>
+        <div class="flex-header-div flex-div-container">
+          <div class="flex-header-item">
+            <span class="material-symbols-outlined"
+              ><a href="../HTML Pages/user profile.html">person</a></span
+            >
+          </div>
+          <div class="flex-header-item">
+            <span class="material-symbols-outlined"
+              ><a href="../Cart/Cart.html">shopping_cart</a></span
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <div id="sidenav">
+      <p onclick="changemycategory('all'); execute()" class="cat">
+        All Categories
+      </p>
+      <p onclick="changemycategory('smartphones'); execute()" class="cat">
+        smartphones
+      </p>
+      <p onclick="changemycategory('laptops'); execute()" class="cat">
+        laptops
+      </p>
+      <p onclick="changemycategory('fragrances'); execute()" class="cat">
+        fragrances
+      </p>
+      <p onclick="changemycategory('skincare'); execute()" class="cat">
+        skincare
+      </p>
+      <p onclick="changemycategory('home-decoration'); execute()" class="cat">
+        home-decoration
+      </p>
+      <p onclick="changemycategory('furniture'); execute()" class="cat">
+        furniture
+      </p>
+      <p onclick="changemycategory('tops'); execute()" class="cat">tops</p>
+      <p onclick="changemycategory('womens-dresses'); execute()" class="cat">
+        womens-dresses
+      </p>
+      <p onclick="changemycategory('womens-shoes'); execute()" class="cat">
+        womens-shoes
+      </p>
+      <p onclick="changemycategory('mens-shirts'); execute()" class="cat">
+        mens-shirts
+      </p>
+      <p onclick="changemycategory('mens-shoes'); execute()" class="cat">
+        mens-shoes
+      </p>
+      <p onclick="changemycategory('mens-watches'); execute()" class="cat">
+        mens-watches
+      </p>
+      <p onclick="changemycategory('womens-watches'); execute()" class="cat">
+        womens-watches
+      </p>
+      <p onclick="changemycategory('womens-bags'); execute()" class="cat">
+        womens-bags
+      </p>
+      <p onclick="changemycategory('womens-jewellery'); execute()" class="cat">
+        womens-jewellery
+      </p>
+      <p onclick="changemycategory('sunglasses'); execute()" class="cat">
+        sunglasses
+      </p>
+      <p onclick="changemycategory('automotive'); execute()" class="cat">
+        automotive
+      </p>
+      <p onclick="changemycategory('motorcycle'); execute()" class="cat">
+        motorcycle
+      </p>
+      <p onclick="changemycategory('lighting'); execute()" class="cat">
+        lighting
+      </p>
+    </div>
+    <div id="catalog">
+      <div class="search-container">
+        <input
+          type="text"
+          class="search"
+          id="searchBar"
+          placeholder="search your products"
+        />
+        <i
+          class="fa-solid fa-magnifying-glass fa-xl"
+          id="searchIcon"
+          style="color: #ff2424"
+        ></i>
+        <!-- <input
+          type="button"
+          class="search-button"
+          id="searchButton"
+          onclick="search()"
+        /> -->
+      </div>
+      <h1>All Categories</h1>
+      <div id="sections"></div>
+    </div>
+
+    <div id="n-p">
+      <button class="n-p" id="prev"><</button>
+      <button class="n-p" id="next">></button>
+    </div>
+    <script src="js.js"></script>
+    <!-- footer------------------------------------------------------------------- -->
+
+    <footer class="footer">
+      <div class="footer-flex">
+        <div class="flex-footer-div underlined-div">
+          <div class="flex-footer-item">
+            <h2>Subscribe Newsletter</h2>
+            <span>Subscribe newsletter to get 5% on all products.</span>
+          </div>
+          <div class="flex-footer-item">
+            <input type="text" name="" id="" placeholder="Enter your email" />
+            <input type="button" value="subscribe" />
+          </div>
+          <div class="flex-footer-item">
+            <span class="material-symbols-outlined">
+              <a href="../HTML Pages/user profile.html" style="color: white"
+                >person</a
+              ></span
+            >
+            <span class="material-symbols-outlined">
+              <a href="../Cart/Cart.html" style="color: white; text-decoration: none;">shopping_cart</a>
+            </span>
+          </div>
+        </div>
+        <div class="flex-footer-div underlined-div">
+          <div class="flex-footer-item">
+            <img src="images/white_logo_footer.png" alt="" />
+          </div>
+          <div class="flex-footer-item">
+            <h3>Shop Women</h3>
+            <ul>
+              <li><a href="#">Womens' dresses</a></li>
+              <li><a href="#">Womens' shoes</a></li>
+              <li><a href="#">Womens' watches</a></li>
+              <li><a href="#">Womens' jewellery</a></li>
+              <li><a href="#">Womens' bags</a></li>
+              <li><a href="#">Tops</a></li>
+            </ul>
+          </div>
+          <div class="flex-footer-item">
+            <h3>Shop Men</h3>
+            <ul>
+              <li><a href="#">Mens' shirts</a></li>
+              <li><a href="#">Mens' shoes</a></li>
+              <li><a href="#">Mens' watches</a></li>
+              <li><a href="#">Sunglasses</a></li>
+              <!-- <li><a href="#">Casual</a></li> -->
+            </ul>
+          </div>
+          <div class="flex-footer-item">
+            <h3>Electronics</h3>
+            <ul>
+              <li><a href="#">Smart phones</a></li>
+              <li><a href="#">Laptops</a></li>
+              <li><a href="#">Automotive</a></li>
+              <li><a href="#">Motorcycle</a></li>
+              <li><a href="#">Lighting</a></li>
+            </ul>
+          </div>
+          <div class="flex-footer-item">
+            <h3>Home Needs</h3>
+            <ul>
+              <li><a href="#">Home decoration</a></li>
+              <li><a href="#">Furniture</a></li>
+              <li><a href="#">Groceries</a></li>
+              <li><a href="#">Fragrances</a></li>
+              <li><a href="#">Skin Care</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex-footer-div">
+          <div class="flex-footer-item">
+            <p style="font-size: 0.9rem">
+              Copyright &copy;2023 All rights reserved | This template is made
+              with &hearts; by Colorlib, and we -ITI students- are just coping
+              the UI
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
